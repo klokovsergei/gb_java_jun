@@ -1,9 +1,11 @@
-package seminar1;
+package seminar1.common;
+
+import seminar1.common.interfaces.Snack;
 
 /**
- * Курица
+ * Сыр Балыковый (Балык)
  */
-public class Chicken implements HealthyFood{
+public class BalykCheese implements Snack {
     @Override
     public boolean getProteins() {
         return true;
@@ -18,6 +20,6 @@ public class Chicken implements HealthyFood{
     }
     @Override
     public String getName() {
-        return "Курица";
+        return "Сыр (Балык)";
     }
 }

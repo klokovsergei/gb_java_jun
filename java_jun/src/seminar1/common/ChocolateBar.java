@@ -1,12 +1,14 @@
-package seminar1;
+package seminar1.common;
+
+import seminar1.common.interfaces.Snack;
 
 /**
- * Сыр Балыковый (Балык)
+ * Шоколадка
  */
-public class BalykCheese implements Shack{
+public class ChocolateBar implements Snack {
     @Override
     public boolean getProteins() {
-        return true;
+        return false;
     }
     @Override
     public boolean getFats() {
@@ -14,10 +16,10 @@ public class BalykCheese implements Shack{
     }
     @Override
     public boolean getCarbohydrates() {
-        return false;
+        return true;
     }
     @Override
     public String getName() {
-        return "Сыр (Балык)";
+        return "Шоколадный батончик";
     }
 }

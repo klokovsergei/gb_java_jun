@@ -1,23 +1,25 @@
-package seminar1;
+package seminar1.common;
+
+import seminar1.common.interfaces.HealthyFood;
 
 /**
- * Фрукт
+ * Оливковое масло
  */
-public class Fruit implements HealthyFood{
+public class OliveOil implements HealthyFood {
     @Override
     public boolean getProteins() {
         return false;
     }
     @Override
     public boolean getFats() {
-        return false;
-    }
-    @Override
-    public boolean getCarbohydrates() {
         return true;
     }
     @Override
+    public boolean getCarbohydrates() {
+        return false;
+    }
+    @Override
     public String getName() {
-        return "Фрукт";
+        return "Оливковое масло";
     }
 }

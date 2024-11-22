@@ -1,4 +1,4 @@
-package seminar1;
+package seminar1.common.interfaces;
 
 /**
  *  Здоровая еда

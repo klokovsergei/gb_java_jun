@@ -1,16 +1,18 @@
-package seminar1;
+package seminar1.common;
+
+import seminar1.common.interfaces.HealthyFood;
 
 /**
- * Чебурек
+ * Курица
  */
-public class Cheburek implements SemiFinishedFood{
+public class Chicken implements HealthyFood {
     @Override
     public boolean getProteins() {
-        return false;
+        return true;
     }
     @Override
     public boolean getFats() {
-        return true;
+        return false;
     }
     @Override
     public boolean getCarbohydrates() {
@@ -18,6 +20,6 @@ public class Cheburek implements SemiFinishedFood{
     }
     @Override
     public String getName() {
-        return "Чебурек";
+        return "Курица";
     }
 }

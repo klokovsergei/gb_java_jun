@@ -1,9 +1,11 @@
-package seminar1;
+package seminar1.common;
+
+import seminar1.common.interfaces.SemiFinishedFood;
 
 /**
  * Замороженные ягоды
  */
-public class DumplingsBerries implements SemiFinishedFood{
+public class DumplingsBerries implements SemiFinishedFood {
     @Override
     public boolean getProteins() {
         return false;

@@ -1,9 +1,11 @@
-package seminar1;
+package seminar1.common;
+
+import seminar1.common.interfaces.SemiFinishedFood;
 
 /**
  * Пельмени
  */
-public class DumplingsMeat implements SemiFinishedFood{
+public class DumplingsMeat implements SemiFinishedFood {
     @Override
     public boolean getProteins() {
         return true;

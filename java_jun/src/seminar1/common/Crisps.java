@@ -1,9 +1,11 @@
-package seminar1;
+package seminar1.common;
+
+import seminar1.common.interfaces.Snack;
 
 /**
  * Чипсы
  */
-public class Crisps implements Shack{
+public class Crisps implements Snack {
     @Override
     public boolean getProteins() {
         return false;

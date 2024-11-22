@@ -1,23 +1,25 @@
-package seminar1;
+package seminar1.common;
+
+import seminar1.common.interfaces.SemiFinishedFood;
 
 /**
- * Шоколадка
+ * Чебурек
  */
-public class ChocolateBar implements Shack{
+public class Cheburek implements SemiFinishedFood {
     @Override
     public boolean getProteins() {
         return false;
     }
     @Override
     public boolean getFats() {
-        return false;
-    }
-    @Override
-    public boolean getCarbohydrates() {
         return true;
     }
     @Override
+    public boolean getCarbohydrates() {
+        return false;
+    }
+    @Override
     public String getName() {
-        return "Шоколадный батончик";
+        return "Чебурек";
     }
 }
