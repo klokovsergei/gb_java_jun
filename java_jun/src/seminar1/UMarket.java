@@ -99,7 +99,7 @@ public class UMarket {
         things.add(new Fruit());
         things.add(new OliveOil());
 
-        things.add(new BalykCheese());
+//        things.add(new BalykCheese());
         things.add(new Crisps());
         things.add(new ChocolateBar());
 
