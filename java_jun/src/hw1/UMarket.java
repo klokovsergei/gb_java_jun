@@ -1,8 +1,8 @@
-package seminar1;
+package hw1;
 
-import seminar1.common.*;
-import seminar1.common.interfaces.Food;
-import seminar1.common.interfaces.Thing;
+import hw1.common.*;
+import hw1.common.interfaces.Food;
+import hw1.common.interfaces.Thing;
 
 import java.util.ArrayList;
 import java.util.Collection;
