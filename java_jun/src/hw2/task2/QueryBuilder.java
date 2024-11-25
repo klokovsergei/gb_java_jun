@@ -1,4 +1,4 @@
-package seminar2;
+package hw2.task2;
 
 import java.lang.reflect.Field;
 import java.util.UUID;
@@ -109,12 +109,33 @@ public class QueryBuilder {
 
     /**
      * TODO: Доработать в рамках домашней работы!
-     *
+     * ```sql
+     * DELETE FROM Customers
+     * WHERE Country = 'Germany';
+     * ```
      * @param clazz
      * @param primaryKey
      * @return
      */
     public String buildDeleteQuery(Class<?> clazz, UUID primaryKey) {
+        StringBuilder query = new StringBuilder("DELETE FROM ");
+
+        if (clazz.isAnnotationPresent(Table.class)) {
+            Table tableAnnotation = clazz.getAnnotation(Table.class);
+            query.append(tableAnnotation.name()).append(" WHERE ");
+        }
+
+        Field[] fields = clazz.getDeclaredFields();
+        for (Field field : fields) {
+            if (field.isAnnotationPresent(Column.class)) {
+                Column columnAnnotation = field.getAnnotation(Column.class);
+                if (columnAnnotation.primaryKey()) {
+                    field.setAccessible(true);
+                    query.append(field.getName()).append(" = ").append(primaryKey).append(";");
+                    return query.toString();
+                }
+            }
+        }
 
         return null;
     }
