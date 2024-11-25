@@ -1,10 +1,13 @@
 package hw1;
 
+import hw1.common.Fruit;
 import hw1.common.interfaces.Food;
+import hw1.common.interfaces.PfcInterface;
 
 import java.lang.reflect.Array;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 /**
@@ -18,12 +21,20 @@ public class Cart <T extends Food> {
     /**
      * Балансировка корзины
      */
-    public  void cartBalancing(Class<T> clazz) {
+    public <F extends Food> void cartBalancing(Class<T> clazz) {
+
+//        Map<Integer, PfcInterface<F>> methods = new HashMap<>();
+//        methods.put(0, Food::getProteins);
+//        methods.put(1, Food::getFats);
+//        methods.put(2, Food::getCarbohydrates);
 
         boolean flalErr = false;
 
         if (foodstuffs.stream().noneMatch(Food::getProteins)) {
-            var thing = market.getThings(clazz).stream().filter(Food::getProteins).findFirst().orElse(null);
+            var thing = market.getThings(clazz).stream()
+                    .filter(Food::getProteins)
+                    .findFirst()
+                    .orElse(null);
             if (thing != null)
                     foodstuffs.add(thing);
             else
@@ -66,6 +77,7 @@ public class Cart <T extends Food> {
     public Collection<T> getFoodstuffs() {
         return foodstuffs;
     }
+
     //endregion
 
     //region Конструкторы
